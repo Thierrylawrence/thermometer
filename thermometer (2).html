@@ -21,21 +21,90 @@
           stroke-width: 5;
         }
 
-        #liquid {
 
 
-          fill: blue;
-          stroke: black;
-          stroke-width: 0
-        }
 
         #label {
 
           font-size: x-small;
-        }
-        #label1{
 
-          font-size:x-small;
+
+        }
+
+
+
+        #label1 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label2 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label3 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label4 {
+
+          font-size: x-small;
+
+        }
+
+        #label5 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label6 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label7 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label8 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label9 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label10 {
+
+          font-size: x-small;
+
+
+        }
+
+        #label11 {
+
+          font-size: x-small;
 
 
         }
@@ -60,9 +129,9 @@
 
       <g id="liquid">
 
-        <rect x="50" y="45" width="20" height="125" />
-        <ellipse cx="60" cy="180" rx="25" ry="25" />
-        <ellipse cx="60" cy="45" rx="10" ry="10" />
+        <rect x="50" y="45" width="20" height="125" style="fill:blue" />
+        <ellipse cx="60" cy="180" rx="25" ry="25" style="fill:blue" />
+        <ellipse cx="60" cy="45" rx="10" ry="10" style="fill:blue" />
       </g>
 
       <path id="highlight" d="Q60 200 35 175 60 150 " />
@@ -85,29 +154,20 @@
 
       </g>
 
-      <g id="label">
-        <text x="90" y="60"> 212</text>
-        <text x="90" y="70">  194</text>
-        <text x="90" y="80"> 176</text>
-        <text x="90" y="90"> 158</text>
-        <text x="90" y="100"> 140</text>
-        <text x="90" y="110"> 122</text>
-        <text x="90" y="120"> 104</text>
-        <text x="90" y="130"> 86</text>
-        <text x="90" y="140"> 68</text>
-        <text x="90" y="150"> 50 </text>
-        <text x="90" y="160"> 32 </text>
-
-      </g>
-
-      
 
 
 
-
-
-
-
+      <text id="label1" x="90" y="60"> 212</text>
+      <text id="label2" x="90" y="70"> 194</text>
+      <text id="label3" x="90" y="80"> 176</text>
+      <text id="label4" x="90" y="90"> 158</text>
+      <text id="label5" x="90" y="100"> 140</text>
+      <text id="label6 " x="90" y="110"> 122</text>
+      <text id="label7" x="90" y="120"> 104</text>
+      <text id="label8 " x="90" y="130"> 86</text>
+      <text id="label9 " x="90" y="140"> 68</text>
+      <text id="label10" x="90" y="150"> 50 </text>
+      <text id="label11" x="90" y="160"> 32 </text>
 
 
 
@@ -116,13 +176,15 @@
   </div>
 
 
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="slider()">
 
-  <input type="radio" name="radioButton" id="radio1" onchange = "change">
+
+  <input type="radio" name="radioButton" id="radio1" onclick="change()">
   <label class="radio-label" for="radio1">Farenheit</label>
 
 
 
-  <input type="radio" name="radioButton" id="checkbox1" onchange = "change">
+  <input type="radio" name="radioButton" id="checkbox1" onclick="change()">
   <label class="checkbox-label" for="checkbox1">Celsius</label>
 
 
@@ -133,57 +195,83 @@
 
 
 
-
-
-function change(){
-
-
-buttons = document.getElementsByName("radioButton")
-
-temptext = document.getElementById("label")
-
-if (buttons[0].checked)
-
-{
-
-
-
-}
-
-
-if (buttons[1].checked)
-
-
-{
-
-  temptext.innerHTML = `
-
-  <g id="label">
-        <text x="90" y="60"> 100</text>
-        <text x="90" y="70">  90</text>
-        <text x="90" y="80"> 80</text>
-        <text x="90" y="90"> 70</text>
-        <text x="90" y="100"> 60</text>
-        <text x="90" y="110"> 50</text>
-        <text x="90" y="120"> 40</text>
-        <text x="90" y="130"> 30</text>
-        <text x="90" y="140"> 20</text>
-        <text x="90" y="150"> 10 </text>
-        <text x="90" y="160"> 0 </text>
-
-      </g>
-  
-  
-  
-  `
+  buttons = document.getElementsByName("radioButton");
 
 
 
 
-}
+  function change() {
 
 
-}
+
+
+    if (buttons[0].checked) {
+      document.getElementById("label1").textContent = "212";
+      document.getElementById("label2").textContent = "194";
+      document.getElementById("label3").textContent = "176";
+      document.getElementById("label4").textContent = "158";
+      document.getElementById("label5").textContent = "140";
+      document.getElementById("label6").textContent = "122";
+      document.getElementById("label7").textContent = "104";
+      document.getElementById("label8").textContent = "86";
+      document.getElementById("label9").textContent = "68";
+      document.getElementById("label10").textContent = "50";
+      document.getElementById("label11").textContent = "32";
+
+
+      document.getElementById("myRange").setAttribute("min", 32)
+
+      document.getElementById("myRange").setAttribute("max", 212)
+
+
+
+    }
+
+
+    else {
+
+      document.getElementById("label1").textContent = "100";
+      document.getElementById("label2").textContent = "90";
+      document.getElementById("label3").textContent = "80";
+      document.getElementById("label4").textContent = "70";
+      document.getElementById("label5").textContent = "60";
+      document.getElementById("label6").textContent = "50";
+      document.getElementById("label7").textContent = "40";
+      document.getElementById("label8").textContent = "30";
+      document.getElementById("label9").textContent = "20";
+      document.getElementById("label10").textContent = "10";
+      document.getElementById("label11").textContent = "0";
+
+
+
+
+      document.getElementById("myRange").setAttribute("min", 0)
+
+      document.getElementById("myRange").setAttribute("max", 100)
+
+
+
+
+
+
+    };
+
+
+  };
+
+
+  function slider() {
+
+
+
+
+
+
+
+
+
+
+  }
 
 
 
