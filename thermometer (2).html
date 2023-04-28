@@ -109,6 +109,13 @@
 
         }
 
+        #label12 {
+
+          font-size: x-small;
+
+
+        }
+
 
         #tickmarks {
 
@@ -129,12 +136,13 @@
 
       <g id="liquid">
 
-        <rect x="50" y="45" width="20" height="125" style="fill:blue" />
-        <ellipse cx="60" cy="180" rx="25" ry="25" style="fill:blue" />
-        <ellipse cx="60" cy="45" rx="10" ry="10" style="fill:blue" />
+        <rect id = "rect" x="50" y="45" width="20" height="125" style="fill:blue" />
+        <ellipse id = "ell2" cx="60" cy="180" rx="25" ry="25" style="fill:blue" />
+        <ellipse id = "ell" cx="60" cy="45" rx="10" ry="10" style="fill:blue" />
+        <path id = "path" d=" M 60 200 A 10 10 0 1 1 60 160" style = "stroke:white; fill:blue; stroke-width:2" />
       </g>
 
-      <path id="highlight" d="Q60 200 35 175 60 150 " />
+    
 
 
 
@@ -151,6 +159,7 @@
         <line x1="80" y1="135" x2="90" y2="135" />
         <line x1="80" y1="145" x2="90" y2="145" />
         <line x1="80" y1="155" x2="90" y2="155" />
+        <line x1="90" y1="175" x2=" 100" y2="175" />
 
       </g>
 
@@ -162,12 +171,13 @@
       <text id="label3" x="90" y="80"> 176</text>
       <text id="label4" x="90" y="90"> 158</text>
       <text id="label5" x="90" y="100"> 140</text>
-      <text id="label6 " x="90" y="110"> 122</text>
+      <text id="label6" x="90" y="110"> 122</text>
       <text id="label7" x="90" y="120"> 104</text>
-      <text id="label8 " x="90" y="130"> 86</text>
-      <text id="label9 " x="90" y="140"> 68</text>
+      <text id="label8" x="90" y="130"> 86</text>
+      <text id="label9" x="90" y="140"> 68</text>
       <text id="label10" x="90" y="150"> 50 </text>
       <text id="label11" x="90" y="160"> 32 </text>
+      <text id="label12" x="100" y="180"> 0 </text>
 
 
 
@@ -217,11 +227,12 @@
       document.getElementById("label9").textContent = "68";
       document.getElementById("label10").textContent = "50";
       document.getElementById("label11").textContent = "32";
+      document.getElementById("label12").textContent = "0";
 
 
       document.getElementById("myRange").setAttribute("min", 32)
 
-      document.getElementById("myRange").setAttribute("max", 212)
+      document.getElementById("myRange").setAttribute("max", 275)
 
 
 
@@ -241,13 +252,14 @@
       document.getElementById("label9").textContent = "20";
       document.getElementById("label10").textContent = "10";
       document.getElementById("label11").textContent = "0";
+      document.getElementById("label12").textContent = "-10";
 
 
 
 
       document.getElementById("myRange").setAttribute("min", 0)
 
-      document.getElementById("myRange").setAttribute("max", 100)
+      document.getElementById("myRange").setAttribute("max", 125)
 
 
 
@@ -261,6 +273,99 @@
 
 
   function slider() {
+
+    height = document.getElementById("myRange").value;
+
+
+    if (buttons[1].checked){
+
+
+      document.getElementById("rect").setAttribute("height", height)
+
+      document.getElementById("rect").setAttribute("y", 170 - height)
+
+      document.getElementById("ell").setAttribute("cy", 170 -height)
+
+
+      if (height > 100){
+
+        document.getElementById("rect").setAttribute("style", "fill:red")
+        document.getElementById("ell").setAttribute("style", "fill:red")
+        document.getElementById("ell2").setAttribute("style", "fill:red")
+        document.getElementById("path").setAttribute("style", "fill:red")
+      }
+
+      if (height > 20 && height < 100){
+
+document.getElementById("rect").setAttribute("style", "fill:orange")
+document.getElementById("ell").setAttribute("style", "fill:orange")
+document.getElementById("ell2").setAttribute("style", "fill:orange")
+document.getElementById("path").setAttribute("style", "fill:orange")
+}
+
+
+if (height < 20){
+
+document.getElementById("rect").setAttribute("style", "fill:blue")
+document.getElementById("ell").setAttribute("style", "fill:blue")
+document.getElementById("ell2").setAttribute("style", "fill:blue")
+document.getElementById("path").setAttribute("style", "fill:blue")
+}
+
+
+
+
+
+    }
+
+
+    if (buttons[0].checked){
+
+      height = (height-32)*5/9
+
+
+
+    document.getElementById("rect").setAttribute("height", height)
+
+  document.getElementById("rect").setAttribute("y", 170 - height)
+
+  document.getElementById("ell").setAttribute("cy", 170 -height)
+
+
+  if (height > 100){
+
+document.getElementById("rect").setAttribute("style", "fill:red")
+document.getElementById("ell").setAttribute("style", "fill:red")
+document.getElementById("ell2").setAttribute("style", "fill:red")
+document.getElementById("path").setAttribute("style", "fill:red")
+}
+
+if (height > 20 && height < 100){
+
+document.getElementById("rect").setAttribute("style", "fill:orange")
+document.getElementById("ell").setAttribute("style", "fill:orange")
+document.getElementById("ell2").setAttribute("style", "fill:orange")
+document.getElementById("path").setAttribute("style", "fill:orange")
+}
+
+
+if (height < 20){
+
+document.getElementById("rect").setAttribute("style", "fill:blue")
+document.getElementById("ell").setAttribute("style", "fill:blue")
+document.getElementById("ell2").setAttribute("style", "fill:blue")
+document.getElementById("path").setAttribute("style", "fill:blue")
+}
+
+
+
+
+    }
+
+
+    
+
+    
 
 
 
