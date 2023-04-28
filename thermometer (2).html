@@ -11,7 +11,7 @@
       <style>
         #glass {
           fill: #ffffff;
-          stroke: #cccccc;
+          stroke: black;
           stroke-width: 3;
         }
 
@@ -19,6 +19,34 @@
           fill: #ffffff;
           stroke: #000000;
           stroke-width: 5;
+        }
+
+        #liquid {
+
+
+          fill: blue;
+          stroke: black;
+          stroke-width: 0
+        }
+
+        #label {
+
+          font-size: x-small;
+        }
+        #label1{
+
+          font-size:x-small;
+
+
+        }
+
+
+        #tickmarks {
+
+
+          fill: black;
+          stroke: black;
+          stroke-width: 4
         }
       </style>
 
@@ -30,8 +58,138 @@
         <rect x="46.5" y="22" width="27" height="165" rx="15" stroke="none" />
       </g>
 
+      <g id="liquid">
+
+        <rect x="50" y="45" width="20" height="125" />
+        <ellipse cx="60" cy="180" rx="25" ry="25" />
+        <ellipse cx="60" cy="45" rx="10" ry="10" />
+      </g>
+
+      <path id="highlight" d="Q60 200 35 175 60 150 " />
+
+
+
+      <g id="tickmarks">
+
+        <line x1="80" y1="55" x2="90" y2="55" />
+        <line x1="80" y1="65" x2="90" y2="65" />
+        <line x1="80" y1="75" x2="90" y2="75" />
+        <line x1="80" y1="85" x2="90" y2="85" />
+        <line x1="80" y1="95" x2="90" y2="95" />
+        <line x1="80" y1="105" x2="90" y2="105" />
+        <line x1="80" y1="115" x2="90" y2="115" />
+        <line x1="80" y1="125" x2="90" y2="125" />
+        <line x1="80" y1="135" x2="90" y2="135" />
+        <line x1="80" y1="145" x2="90" y2="145" />
+        <line x1="80" y1="155" x2="90" y2="155" />
+
+      </g>
+
+      <g id="label">
+        <text x="90" y="60"> 212</text>
+        <text x="90" y="70">  194</text>
+        <text x="90" y="80"> 176</text>
+        <text x="90" y="90"> 158</text>
+        <text x="90" y="100"> 140</text>
+        <text x="90" y="110"> 122</text>
+        <text x="90" y="120"> 104</text>
+        <text x="90" y="130"> 86</text>
+        <text x="90" y="140"> 68</text>
+        <text x="90" y="150"> 50 </text>
+        <text x="90" y="160"> 32 </text>
+
+      </g>
+
+      
+
+
+
+
+
+
+
+
+
+
+
     </svg>
   </div>
+
+
+
+  <input type="radio" name="radioButton" id="radio1" onchange = "change">
+  <label class="radio-label" for="radio1">Farenheit</label>
+
+
+
+  <input type="radio" name="radioButton" id="checkbox1" onchange = "change">
+  <label class="checkbox-label" for="checkbox1">Celsius</label>
+
+
+
 </body>
+
+<script>
+
+
+
+
+
+function change(){
+
+
+buttons = document.getElementsByName("radioButton")
+
+temptext = document.getElementById("label")
+
+if (buttons[0].checked)
+
+{
+
+
+
+}
+
+
+if (buttons[1].checked)
+
+
+{
+
+  temptext.innerHTML = `
+
+  <g id="label">
+        <text x="90" y="60"> 100</text>
+        <text x="90" y="70">  90</text>
+        <text x="90" y="80"> 80</text>
+        <text x="90" y="90"> 70</text>
+        <text x="90" y="100"> 60</text>
+        <text x="90" y="110"> 50</text>
+        <text x="90" y="120"> 40</text>
+        <text x="90" y="130"> 30</text>
+        <text x="90" y="140"> 20</text>
+        <text x="90" y="150"> 10 </text>
+        <text x="90" y="160"> 0 </text>
+
+      </g>
+  
+  
+  
+  `
+
+
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+
 
 </html>
